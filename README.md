@@ -12,6 +12,7 @@
 │   ├── services  (Focus on reusable service)
 │   ├── state  (Focus state management)
 │   ├── utils (Focus on reusable component)
+│   ├── tests (Focus on testcases with xxx.test.js)
 │   ├── App.js
 │   └── index.js
 ├── package-lock.json
@@ -38,9 +39,9 @@ Apart form the below common benefits, React.js is better for me to deal with the
 
 ### Why Webpack?
 
-1. Webpack is a good friend to gather my all dependencies with the help of an easy to set up config file. 
-2. Webpack also provides a lot of loaders which transform files from a different language to Javascript, ot inline images as data URLs. 
-3. [Plugins](https://webpack.js.org/plugins/) can intercept runtime events supplied by webpack (e.g. [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/))
+- Webpack is a good friend to gather my all dependencies with the help of an easy to set up config file. 
+- Webpack also provides a lot of loaders which transform files from a different language to Javascript, ot inline images as data URLs. 
+- [Plugins](https://webpack.js.org/plugins/) can intercept runtime events supplied by webpack (e.g. [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/))
 
 ### Why Tailwind?
 
@@ -60,47 +61,44 @@ JEST.js is a test framework which easy to use, and it serves below benefits
 
 ---
 
-
-1. How to package (build) your component;
-
-TODO: write after AWS deployment
-
---- 
-
-1. How to start your component;
-
 ## Development server
 
-Run `npm start` for a dev server.
+Run `npm run serve` for a dev server.
 
+---
 ## Build
 
-Run `npm run build` to build the project
+Run `npm run build` to build the project.
 
+The build folder path is adjusted with the webpack, and the artifacts currently is deploying to the [AWS S3](https://aws.amazon.com/s3/). 
+
+To-do item in the deployment stage, we also can do the CI/CD pipeline to deploy automatically.
+
+---
 ## Running unit tests
 
+Run `npm run test` to run ten unit tests.
 
 ---
 
+## Business Details
 
-3. Assumptions (if any) that you have made in your implementation;
-
-Business case, sorted the not ready first, and sortby createdAt
-
+- The searchbar in the stock list page is added to enhance the user experience
+- The list of the order basket is sorted by createdAt
 ---
 
 
-4. Special cases handling (if any); and
+## Special Handling
 
-Pagination, search will set 0
-Toast Message, 10s
+
+- Pagination page will set value as 0 if searchbar triggered
+- Toast Message will clear every 10 second by useEffect triggering
 
 ---
 
+## Utils Components Details 
 
-5. Purpose / functionality of the component, if it is an extra component.
-
- - Pagination 
- - Searchbar
- - Toast
- - Tooltip
+ - Pagination (shared to stock list page and order basket page)
+ - Searchbar (reusable component for return search keyword)
+ - Toast (display the toast message for alert user)
+ - Tooltip (informative tooltip to display extra message to users)

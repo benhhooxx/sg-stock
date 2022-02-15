@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=fallback');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-text-base: 255, 255, 255;
+    --color-text-muted: 199, 210, 254;
+    --color-text-inverted: 79, 70, 229;
+    --color-fill: 67, 56, 202;
+    --color-button-accent: 255, 255, 255;
+    --color-button-accent-hover: 238, 242, 255;
+    --color-button-muted: 99, 102, 241;
+  }
+  .theme-swiss {
+    --color-text-base: 255, 255, 255;
+    --color-text-muted: 254, 202, 202;
+    --color-text-inverted: 220, 38, 38;
+    --color-fill: 185, 28, 28;
+    --color-button-accent: 255, 255, 255;
+    --color-button-accent-hover: 254, 242, 242;
+    --color-button-muted: 239, 68, 68;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply text-skin-base bg-skin-button-muted hover:bg-opacity-80 items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8;
+  }
+  .btn-secondary {
+    @apply text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8;
+  }
+  .btn-disabled {
+    @apply cursor-not-allowed bg-gray-400
+  }
+}
+
+@import 'additional/theme.scss';
+@import 'additional/utility-patterns.scss';

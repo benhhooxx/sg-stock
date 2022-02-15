@@ -1,0 +1,1 @@
+export const stockListTableHeaders = ["Stock Code", "Market Price", "Currency", "Actions"];
